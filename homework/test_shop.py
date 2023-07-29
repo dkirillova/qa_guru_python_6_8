@@ -50,11 +50,11 @@ class TestCart:
         Например, негативные тесты, ожидающие ошибку (используйте pytest.raises, чтобы проверить это)
     """
 
-    def test_add_product_to_cart(self, cart, book):
-        cart.add_product(book, 100)
-        assert cart.products[book] == 100
-        cart.add_product(book, 1)
-        assert cart.products[book] == 101
+    def test_add_product_to_cart(self, cart, product):
+        cart.add_product(product, 100)
+        assert cart.products[product] == 100
+        cart.add_product(product, 1)
+        assert cart.products[product] == 101
 
     def test_remove_product_from_cart_more_than_available(self, cart, product):
         cart.add_product(product, 3)
